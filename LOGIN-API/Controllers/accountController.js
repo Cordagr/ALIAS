@@ -32,3 +32,14 @@ exports.new = function (req, res) {
         });
     });
 };
+// Handles viewing user information
+exports.view = function (req, res) {
+    account.findById(req.params.account_id, function (err, user) {
+        if (err)
+            res.send(err);
+        res.json({
+            message: 'Account details loading..',
+            data: user
+        });
+    });
+};
