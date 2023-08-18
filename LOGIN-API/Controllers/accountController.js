@@ -1,4 +1,6 @@
 // accountController.js
+//import hasher for password (db)//
+const bcrypt = require("bcryptjs");
 const User = require("../model/User")
 exports.register = async (req, res, next) => {
   const { username, password } = req.body
