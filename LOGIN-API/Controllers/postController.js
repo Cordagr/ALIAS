@@ -4,8 +4,8 @@ const options = {
     url: 'https://reqres.in/api/users',
     json: true,
     body: {
-        name: 'John Doe',
-        job: 'Content Writer'
+        name: 'Ja',
+        job: 'Singer'
     }
 };
 
