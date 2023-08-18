@@ -2,6 +2,8 @@
 //import hasher for password (db)//
 const bcrypt = require("bcryptjs");
 const User = require("../model/User")
+
+
 exports.register = async (req, res, next) => {
   const { username, password } = req.body
   if (password.length < 6) {
@@ -16,8 +18,37 @@ exports.register = async (req, res, next) => {
       message: "User not successful created",
       error: error.mesage,
     })
-  }
 }
+
+  bcrypt.hash(password, 10).then(async (hash) => {
+    await User.create({
+      username,
+      password: hash,
+    })
+      .then((user) =>
+        res.status(200).json({
+          message: "User successfully created",
+           user,
+        })
+      )
+      .catch((error) =>
+        res.status(400).json({
+          message: "User not successful created",
+          error: error.message,
+        })
+      );
+  });
+};
+}
+
+
+
+
+
+
+
+
+
 //login function//
 exports.login = async (req, res, next) => {
   try {
