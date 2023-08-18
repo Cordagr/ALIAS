@@ -81,8 +81,11 @@ const createCardElements=()=>
                if(event.target.classList.contains("like-yes"))
                {
                  console.log("Saving Favorite...");
+
+                
                  getFaveData(event.target);
-               }else
+               }
+               else
                {
                  console.log("Removing Favorite...");
                  getFaveData(event.target);
