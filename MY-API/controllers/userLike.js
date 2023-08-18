@@ -31,6 +31,7 @@ const renderContacts=(contacts)=>
   };
   const createCardElements=()=>
     {
+      const article=document.createElement("article");
       const img=document.createElement("img");
       const details=document.createElement("div");
       const like=details=document.createElement("div");
@@ -38,7 +39,24 @@ const renderContacts=(contacts)=>
       const email=document.createElement("p");
       return {img,details,like,name,email};
     };
+     const createPersonCard=(elemObj,person)=>
+       {
+      const {article,img,details,like,name,email}=elemObj;
+      details.className="details";
+      like.classList.add("like","like-no");
+      name.textContent='${person.firstname} ${person.lastname}';
 
+      img.src=person.image;
+      email.textContent=person.email;
 
+      article.appendChild(img);
+      details.appendChild(name);
+      details.appendChild(email);
+      article.appendChild(details);
+      article.appendChild(like);
+      return article;
+        
+         
+       }
 
   }
