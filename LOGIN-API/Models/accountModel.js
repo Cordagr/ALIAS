@@ -15,6 +15,13 @@ const UserSchema = new Mongoose.Schema({
     default: "Basic",
     required: true,
   },
+   posts: [
+        {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Post"
+        }
+    ] 
+},
 })
 const User = Mongoose.model("user", UserSchema)
 module.exports = User
