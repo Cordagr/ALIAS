@@ -48,7 +48,7 @@ const createCardElements=()=>
       const like=details=document.createElement("div");
       const name=document.createElement("h2");
       const email=document.createElement("p");
-      return {img,details,like,name,email};
+      return {article,img,details,like,name,email};
     };
      
 
