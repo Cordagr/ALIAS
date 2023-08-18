@@ -1,35 +1,16 @@
-// Import user model
-blog = require('../models/postModel');
-// Handle index actions
-exports.index = function (req, res) {
-    post.get(function (err, users) {
-        if (err) {
-            res.json({
-                status: "error",
-                message: err,
-            });
-        }
-        res.json({
-            status: "success",
-            message: "Posts retrieved successfully",
-            data: users
-        });
-    });
-};
-// Handle create user actions
-exports.new = function (req, res) {
-    var user = new post();
-    user.username = req.body.username ? req.body.username : user.username;
-    user.content = req.body.content;
-    user.pfp=req.body.pfp;
-// save the user and check for errors
-    user.save(function (err) {
-        // if (err)
-        //     res.json(err);
-        res.json({
-            message: 'New post created!',
-            data: user
-        });
-    });
-};
+//postController.js//
+const querystring = require('querystring');
+const request = require('request');
 
+const link = 'http://your-website-link.com/sample.php';
+let params = { 'A': 'a', 'B': 'b' };
+
+params = querystring.stringify(params); // changing into querystring eg 'A=a&B=b'
+
+request.post({
+  headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, // important to interect with PHP
+  url: link,
+  body: params,
+}, function(error, response, body){
+  console.log(body);
+});
