@@ -1,4 +1,4 @@
-// auth.js
+// accountController.js
 const User = require("../model/User")
 exports.register = async (req, res, next) => {
   const { username, password } = req.body
