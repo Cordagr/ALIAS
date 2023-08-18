@@ -22,6 +22,8 @@ const renderContacts=(contacts)=>
     contacts.forEach((contact)=>
     {
       const elemObj=createCardElements();
+      const card=createPersonCard(elemObj,contact);
+      cardsArray.push(card);
       //push person into array//
     });
      cardsArray.forEach((card)=>
