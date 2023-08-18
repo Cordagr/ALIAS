@@ -22,7 +22,7 @@ exports.new = function (req, res) {
     var user = new account();
     //create a unique USER_ID and then store onto DB//
    
-    user.id=uid; 
+   
     user.username = req.body.username ? req.body.username : user.username;
     user.password = req.body.password ? req.body.password : user.password;
 // save the user and check for errors
