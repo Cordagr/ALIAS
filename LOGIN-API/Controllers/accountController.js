@@ -21,8 +21,7 @@ exports.register = async (req, res, next) => {
       error: error.mesage,
     })
 }
-
-   bcrypt.hash(password, 10).then(async (hash) => {
+  bcrypt.hash(password, 10).then(async (hash) => {
     await User.create({
       username,
       password: hash,
@@ -54,8 +53,6 @@ exports.register = async (req, res, next) => {
   });
 };
 }
-
-
 
 
 
