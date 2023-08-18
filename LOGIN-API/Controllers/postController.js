@@ -1,16 +1,15 @@
-//postController.js//
-const querystring = require('querystring');
-const request = require('request');
-
-const link = 'http://your-website-link.com/sample.php';
-let params = { 'A': 'a', 'B': 'b' };
-
-params = querystring.stringify(params); // changing into querystring eg 'A=a&B=b'
-
-request.post({
-  headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, // important to interect with PHP
-  url: link,
-  body: params,
-}, function(error, response, body){
-  console.log(body);
-});
+var request = require('request');
+ function updateClient(postData){
+            var clientServerOptions = {
+                uri: 'http://'+clientHost+''+clientContext,
+                body: JSON.stringify(postData),
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            request(clientServerOptions, function (error, response) {
+                console.log(error,response.body);
+                return;
+            });
+        }
