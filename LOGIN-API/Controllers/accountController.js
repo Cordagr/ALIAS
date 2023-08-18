@@ -73,9 +73,21 @@ exports.update = async (req, res, next) => {
             .json({ message: "An error occurred", error: error.message });
         });
 
+//delete user//
 
-
-
+exports.deleteUser = async (req, res, next) => {
+  const { id } = req.body
+  await User.findById(id)
+    .then(user => user.remove())
+    .then(user =>
+      res.status(201).json({ message: "User successfully deleted", user })
+    )
+    .catch(error =>
+      res
+        .status(400)
+        .json({ message: "An error occurred", error: error.message })
+    )
+}
 
   
 }
