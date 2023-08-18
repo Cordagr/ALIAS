@@ -2,6 +2,8 @@
 //import hasher for password (db)//
 const bcrypt = require("bcryptjs");
 const User = require("../model/User")
+const jwt = require('jsonwebtoken')
+const jwtSecret = 'hash fill-in'
 
 
 exports.register = async (req, res, next) => {
