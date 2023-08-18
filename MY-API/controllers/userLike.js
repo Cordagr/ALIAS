@@ -5,6 +5,9 @@ const initApp=async()=>
     //renders data to page
     //add listeners
   };
+
+
+
 document.addEventListener("DOMContentLoaded",initApp);
 const getDataFromDB=async()=>
   {
@@ -14,6 +17,9 @@ const getDataFromDB=async()=>
 const jsonData=await fill.json();
 return json.data;
 };
+
+
+
 const renderContacts=(contacts)=>
   {
     const main=document.querySelector("main");
@@ -31,7 +37,10 @@ const renderContacts=(contacts)=>
          main.appendChild(card);
        });
   };
-  const createCardElements=()=>
+  
+
+
+const createCardElements=()=>
     {
       const article=document.createElement("article");
       const img=document.createElement("img");
@@ -41,7 +50,9 @@ const renderContacts=(contacts)=>
       const email=document.createElement("p");
       return {img,details,like,name,email};
     };
-     const createPersonCard=(elemObj,person)=>
+     
+
+       const createPersonCard=(elemObj,person)=>
        {
       const {article,img,details,like,name,email}=elemObj;
       details.className="details";
@@ -57,8 +68,6 @@ const renderContacts=(contacts)=>
       article.appendChild(details);
       article.appendChild(like);
       return article;
-        
-         
-       }
+      };
 
   }
