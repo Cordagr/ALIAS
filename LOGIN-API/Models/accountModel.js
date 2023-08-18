@@ -22,6 +22,15 @@ const UserSchema = new Mongoose.Schema({
         }
     ] 
 },
+
+        profileImage: {
+        type: String,
+        required: false,
+        max: 255
+    },
+
+
+                                       
 })
 const User = Mongoose.model("user", UserSchema)
 module.exports = User
