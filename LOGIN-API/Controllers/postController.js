@@ -1,7 +1,7 @@
 var request = require('request');
- function updateClient(postData){
-            var clientServerOptions = {
-                uri: 'http://'+clientHost+''+clientContext,
+ function updatePost(postData){
+            var Post = {
+              
                 body: JSON.stringify(postData),
                 method: 'POST',
                 headers: {
