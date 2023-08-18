@@ -16,3 +16,12 @@ exports.register = async (req, res, next) => {
     })
   }
 }
+//login function//
+exports.login = async (req, res, next) => {
+  const { username, password } = req.body
+  // Check if username and password is provided
+  if (!username || !password) {
+    return res.status(400).json({
+      message: "Username or Password not present",
+    })
+  }
