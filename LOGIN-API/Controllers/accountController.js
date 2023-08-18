@@ -21,10 +21,7 @@ exports.index = function (req, res) {
 exports.new = function (req, res) {
     var user = new account();
     //create a unique USER_ID and then store onto DB//
-    const uid=function()
-        {
-            Date.now().toString(36) + Math.random().toString(36).substring(2, 12).padStart(12, 0);
-        }
+   
     user.id=uid; 
     user.username = req.body.username ? req.body.username : user.username;
     user.password = req.body.password ? req.body.password : user.password;
