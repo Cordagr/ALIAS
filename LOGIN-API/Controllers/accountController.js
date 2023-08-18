@@ -20,7 +20,7 @@ exports.index = function (req, res) {
 // Handle create user actions
 exports.new = function (req, res) {
     var user = new account();
-    //create a unique USER_ID and then store onto DB//
+   
    
    
     user.username = req.body.username ? req.body.username : user.username;
