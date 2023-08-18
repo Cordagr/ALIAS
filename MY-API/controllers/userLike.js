@@ -36,7 +36,8 @@ const renderContacts=(contacts)=>
       const like=details=document.createElement("div");
       const name=document.createElement("h2");
       const email=document.createElement("p");
-    }
+      return {img,details,like,name,email};
+    };
 
 
 
