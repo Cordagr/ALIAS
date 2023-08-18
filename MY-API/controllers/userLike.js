@@ -10,8 +10,34 @@ const getDataFromDB=async()=>
   {
     const DataStream=await fetch
       ("fill in");
-  }
+  };
 const jsonData=await fill.json();
 return json.data;
 };
+const renderContacts=(contacts)=>
+  {
+    const main=document.querySelector("main");
+    //add actual data base eventually//
+    const peopleArray[];
+    contacts.forEach((contact)=>
+    {
+      const elemObj=createCardElements();
+      //push person into array//
+    });
+     cardsArray.forEach((card)=>
+       {
+         main.appendChild(card);
+       });
+  };
+  const createCardElements=()=>
+    {
+      const img=document.createElement("img");
+      const details=document.createElement("div");
+      const like=details=document.createElement("div");
+      const name=document.createElement("h2");
+      
+    }
 
+
+
+  }
