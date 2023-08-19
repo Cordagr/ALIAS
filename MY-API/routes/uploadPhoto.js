@@ -14,7 +14,7 @@ app.post('/upload-photo', async (req, res) => {
                 
                 //push file details
                 data.push({
-                    photo_id: id;
+                    post_id: id;
                     name: photo.name,
                     mimetype: photo.mimetype,
                     size: photo.size
