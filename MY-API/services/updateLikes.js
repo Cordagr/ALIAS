@@ -19,7 +19,7 @@ async function change(user,post)
     const result = await db.query(
      //Update likes//
   START TRANSACTION;
-  DELETE FROM video_likes WHERE ...;
+  DELETE FROM video_likes WHERE RIMARY KEY(video_id, user_id)= '$post_id';
   UPDATE videos SET like_ct = like_ct - 1 WHERE ...;
   COMMIT;
   );
