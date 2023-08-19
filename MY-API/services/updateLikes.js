@@ -1,4 +1,4 @@
-function updateLikes(user)
+function updateLikes(user,post)
 {
 let messages=[];
 if(!user.username)
@@ -6,18 +6,22 @@ if(!user.username)
   messages.push("username does not exist!");
 }
 
-  if(!user.username && user.id.length>255)
+if(!post)
 {
-    messages.push("username does not exist and id is too long!");
+  messages.push("post does not exist!");
 }
 }
 
-async function create(user)
+
+async function change(user,post)
 {
-  pushUser(user);
+    updateLikes(user,post);
     const result = await db.query(
-    'INSERT INTO quote (quote, author) VALUES (?, ?)', 
-    [user.username,user.id]
+     //Update likes//
+  START TRANSACTION;
+  DELETE FROM video_likes WHERE ...;
+  UPDATE videos SET like_ct = like_ct - 1 WHERE ...;
+  COMMIT;
   );
 
   let message = 'Error in creating quote';
