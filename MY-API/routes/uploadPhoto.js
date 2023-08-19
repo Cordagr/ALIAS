@@ -7,13 +7,14 @@ app.post('/upload-photo', async (req, res) => {
             });
         } else {
             let data = req.files.photo; 
-    
+            let id=Math.floor(Math.random() * Date.now()).toString(16);
         
                 //move photo to uploads directory
                 photo.mv('./uploads/' + photo.name);
-
+                
                 //push file details
                 data.push({
+                    photo_id: id;
                     name: photo.name,
                     mimetype: photo.mimetype,
                     size: photo.size
