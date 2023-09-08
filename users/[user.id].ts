@@ -30,7 +30,7 @@ const followersCount=await prisma.user.findUnique({
   }
 });
        
-    
+return req.status(200).json({...existingUser,followersCount});    
 
 
 
