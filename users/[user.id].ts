@@ -16,11 +16,25 @@ res:NextApiResponse
         throw new Error ('Invalid ID');
       }
  const existingUser=await prisma.user.findUnique({
-   where:
+   where:{
     id:UserID
  }
  });                                      
-  
+
+const followersCount=await prisma.user.findUnique({
+  where:{
+     followingIds:
+     {
+       has:UserID
+     }
+  }
+});
+       
+    
+
+
+
+      
   
 }catch(error)
   {
